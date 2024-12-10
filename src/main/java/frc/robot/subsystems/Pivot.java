@@ -13,6 +13,7 @@ import edu.wpi.first.math.VecBuilder;
 import edu.wpi.first.math.Vector;
 import edu.wpi.first.math.numbers.N1;
 import edu.wpi.first.math.numbers.N2;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.PivotConstants;
 import frc.robot.stateSpace.StateSpaceController;
@@ -52,6 +53,7 @@ public class Pivot extends SubsystemBase {
 
   private void applyInput(Vector<N1> inputs) {
     double volts = inputs.get(0);
+    SmartDashboard.putNumber("i want to output", volts);
     m_pivotMotor.setVoltage(volts);
   }
 

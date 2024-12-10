@@ -30,7 +30,7 @@ public final class Constants {
 
   public static final class StateSpaceConstants {
     public static final double k_dt = 0.02;
-    public static final double k_maxVoltage = 2.0;
+    public static final double k_maxVoltage = 4.0;
   }
 
   public static final class PivotConstants {
@@ -40,10 +40,10 @@ public final class Constants {
     public static final double k_momentInertia = 0.2188; // SI units
     public static final double k_gearRatio = 125.0;
 
-    private static final Vector<N2> k_stateSpaceStdDevs = VecBuilder.fill(0.01, 0.3);
+    private static final Vector<N2> k_stateSpaceStdDevs = VecBuilder.fill(0.1, 0.3);
 
-    private static final Vector<N2> qelms = VecBuilder.fill(0.001, 0.1);
-    private static final Vector<N1> relms = VecBuilder.fill(2.0);
+    private static final Vector<N2> qelms = VecBuilder.fill(0.0001, 0.1);
+    private static final Vector<N1> relms = VecBuilder.fill(4.0);
 
     private static final LinearSystem<N2, N1, N2> k_plant = LinearSystemId.createDCMotorSystem(TalonFXConstants.TalonFXDCMotor, k_momentInertia, k_gearRatio);
 
